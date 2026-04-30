@@ -6,7 +6,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-6 md:px-16 h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="font-mono text-sm tracking-wider uppercase hover:text-muted transition-colors"
+          className="font-dm-mono text-sm tracking-[0.15em] font-normal uppercase hover:text-muted transition-colors"
         >
           GIN YOONG OH
         </Link>

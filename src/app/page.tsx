@@ -27,45 +27,30 @@ export default function Home() {
       </div>
 
       {/* Selected Works Header */}
-      <div className="flex justify-between items-baseline pb-6 border-b border-border mb-16">
+      <div className="flex justify-between items-baseline pb-6 border-b border-border mb-4">
         <span className="text-xl font-medium">Selected Works</span>
         <span className="font-mono text-sm text-muted">2024 — 2026</span>
       </div>
 
-      {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-24">
+      {/* Project List */}
+      <div>
         {projects.map((project) => (
           <Link
             key={project.slug}
             href={`/works/${project.slug}`}
-            className="group block"
+            className="group block border-b border-border last:border-b-0 transition-colors duration-300 hover:bg-foreground/[0.02]"
           >
-            {/* Thumbnail */}
-            <div className="aspect-[4/3] overflow-hidden bg-border">
-              {project.thumbnailImage ? (
-                <img
-                  src={project.thumbnailImage}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="flex items-center justify-center h-full">
-                  <span className="text-muted font-mono text-sm uppercase tracking-widest">
-                    Coming Soon
-                  </span>
-                </div>
-              )}
-            </div>
-
-            {/* Card Info */}
-            <div className="mt-6">
-              <p className="text-2xl md:text-3xl font-medium tracking-tight">
-                {project.number}&nbsp;&nbsp;{project.title}
-              </p>
-              <p className="mt-2 font-mono text-xs uppercase tracking-widest text-muted">
-                {project.category} ⊛ {project.location}
-              </p>
+            <div className="flex items-baseline justify-between py-6 md:py-8">
+              <div className="flex items-baseline gap-6 md:gap-12">
+                <span className="font-mono text-sm text-muted">{project.number}</span>
+                <span className="text-2xl md:text-3xl font-medium tracking-tight">{project.title}</span>
+              </div>
+              <div className="flex items-baseline gap-6 md:gap-8">
+                <span className="hidden md:block font-mono text-xs uppercase tracking-widest text-muted">
+                  {project.category} ⊛ {project.location}
+                </span>
+                <span className="text-xl text-muted transition-transform duration-300 group-hover:translate-x-1 inline-block">→</span>
+              </div>
             </div>
           </Link>
         ))}
