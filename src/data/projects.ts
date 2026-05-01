@@ -5,6 +5,7 @@ export type ProjectSection = {
   images: {
     src: string;
     caption?: string;
+    description?: string;
     fullBleed?: boolean;
   }[];
 };
@@ -109,7 +110,7 @@ export const projects: Project[] = [
         type: "renderings",
         title: "Renderings",
         images: [
-          { src: "/images/01-artist-residency/16-render-1.png", fullBleed: true },
+          { src: "/images/01-artist-residency/16-render-1.png", description: "Wellness Program in Urban Park", fullBleed: true },
           { src: "/images/01-artist-residency/17-render-2.png", fullBleed: true },
         ],
       },

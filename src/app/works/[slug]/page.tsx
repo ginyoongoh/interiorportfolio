@@ -22,6 +22,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function ImageMeta({ caption, description }: { caption?: string; description?: string }) {
+  if (!caption && !description) return null;
+  return (
+    <>
+      {caption && (
+        <p className="mt-3 font-mono text-xs uppercase tracking-widest text-muted">
+          {caption}
+        </p>
+      )}
+      {description && (
+        <p className={`${caption ? "mt-2" : "mt-4"} text-base md:text-lg text-foreground/80 leading-relaxed max-w-2xl`}>
+          {description}
+        </p>
+      )}
+    </>
+  );
+}
+
 function groupImages(images: ProjectSection["images"]) {
   const groups: Array<{ fullBleed: boolean; items: ProjectSection["images"] }> = [];
   for (const img of images) {
@@ -144,11 +162,7 @@ export default async function ProjectPage({ params }: Props) {
                             className="w-full h-auto"
                             loading="lazy"
                           />
-                          {img.caption && (
-                            <p className="mt-3 font-mono text-xs text-muted">
-                              {img.caption}
-                            </p>
-                          )}
+                          <ImageMeta caption={img.caption} description={img.description} />
                         </div>
                       ))}
                     </div>
@@ -165,11 +179,7 @@ export default async function ProjectPage({ params }: Props) {
                             className="w-full h-auto"
                             loading="lazy"
                           />
-                          {img.caption && (
-                            <p className="mt-3 font-mono text-xs text-muted">
-                              {img.caption}
-                            </p>
-                          )}
+                          <ImageMeta caption={img.caption} description={img.description} />
                         </div>
                       ))}
                     </div>
