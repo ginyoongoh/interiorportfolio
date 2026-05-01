@@ -86,6 +86,13 @@ export default async function ProjectPage({ params }: Props) {
               className="w-full h-auto"
               loading="lazy"
             />
+            {project.heroDescription && (
+              <div className="mt-4 max-w-3xl">
+                <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                  {project.heroDescription}
+                </p>
+              </div>
+            )}
           </div>
         </ScrollReveal>
       )}

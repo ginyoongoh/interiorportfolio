@@ -22,6 +22,7 @@ export type Project = {
   shortDescription: string;
   fullDescription: string;
   heroImage: string;
+  heroDescription?: string;
   thumbnailImage: string;
   sections: ProjectSection[];
   nextSlug: string;
@@ -72,8 +73,8 @@ export const projects: Project[] = [
         description:
           "Layered buffer spaces with movable walls and folding window facades enable the building to transform with the rhythm of public life. The facade itself becomes a participatory element, opening and closing in dialogue with the street.",
         images: [
-          { src: "/images/01-artist-residency/06-closed-facade.png", caption: "Facade — Closed", fullBleed: true },
-          { src: "/images/01-artist-residency/07-open-facade.png", caption: "Facade — Open", fullBleed: true },
+          { src: "/images/01-artist-residency/06-closed-facade.png", caption: "Facade — Closed", fullBleed: false },
+          { src: "/images/01-artist-residency/07-open-facade.png", caption: "Facade — Open", fullBleed: false },
         ],
       },
       {
@@ -82,7 +83,7 @@ export const projects: Project[] = [
         description:
           "Two material strategies drive the design: preserving the existing brick and concrete as found, and incorporating natural elements that bring softness and seasonality into the space.",
         images: [
-          { src: "/images/01-artist-residency/10-material-board.png", fullBleed: false },
+          { src: "/images/01-artist-residency/10-material-board.jpg", fullBleed: false },
         ],
       },
       {
@@ -92,7 +93,7 @@ export const projects: Project[] = [
           "Three core programs anchor the residency: a Playwrights' Studio for writing and reading, a Media Artist Studio for interactive work, and a Flexible Workplace that adapts to communal use.",
         images: [
           { src: "/images/01-artist-residency/11-playwrights-studio.png", caption: "Playwrights' Studio", fullBleed: false },
-          { src: "/images/01-artist-residency/12-media-artist-studio.png", caption: "Media Artist Studio", fullBleed: false },
+          { src: "/images/01-artist-residency/12-interactive-media-artist-studio.png", caption: "Interactive Media Artist Studio", fullBleed: false },
           { src: "/images/01-artist-residency/13-flexible-workplace.png", caption: "Flexible Workplace", fullBleed: false },
         ],
       },
@@ -102,8 +103,8 @@ export const projects: Project[] = [
         description:
           "Building sections reveal the vertical layering of programs and the relationship between street, ground, and basement levels.",
         images: [
-          { src: "/images/01-artist-residency/14-section-1.png", caption: "Section 01", fullBleed: true },
-          { src: "/images/01-artist-residency/15-section-2.png", caption: "Section 02", fullBleed: true },
+          { src: "/images/01-artist-residency/14-section-1.png", caption: "Section 01", fullBleed: false },
+          { src: "/images/01-artist-residency/15-section-2.png", caption: "Section 02", fullBleed: false },
         ],
       },
       {
@@ -111,7 +112,7 @@ export const projects: Project[] = [
         title: "Renderings",
         images: [
           { src: "/images/01-artist-residency/16-render-1.png", description: "Wellness Program in Urban Park", fullBleed: true },
-          { src: "/images/01-artist-residency/17-render-2.png", fullBleed: true },
+          { src: "/images/01-artist-residency/17-render-2.png", description: "Interactive Media Exhibition on Basement", fullBleed: true },
         ],
       },
       {
@@ -165,6 +166,7 @@ export const projects: Project[] = [
     fullDescription:
       "The project designs a new Brooklyn Public Library branch at the Pfizer Building in Broadway Triangle. Through precedent and site research, the library supports the community based on local neighborhood needs. The new library extends beyond its conventional purpose—reading—to embrace diverse public uses that invite more people to come.",
     heroImage: "/images/03-library/01-hero.png",
+    heroDescription: "Overview",
     thumbnailImage: "/images/03-library/01-hero.png",
     sections: [
       {
@@ -183,29 +185,29 @@ export const projects: Project[] = [
         description:
           "The library is structured as a sequence of layered programs—reading, gathering, learning, exhibiting—each calibrated to invite different modes of public engagement throughout the day.",
         images: [
-          { src: "/images/03-library/04-concept-diagram-1.png", caption: "Concept 01", fullBleed: false },
-          { src: "/images/03-library/05-concept-diagram-2.png", caption: "Concept 02", fullBleed: false },
-          { src: "/images/03-library/06-concept-diagram-3.png", caption: "Concept 03", fullBleed: false },
+          { src: "/images/03-library/04-concept-diagram-1.png", caption: "Programming", fullBleed: false },
+          { src: "/images/03-library/05-concept-diagram-2.png", caption: "Consumption Ideation", fullBleed: false },
+          { src: "/images/03-library/06-concept-diagram-3.png", caption: "Developed Plan", fullBleed: false },
         ],
       },
       {
         type: "plans",
         title: "Floor Plans",
         images: [
-          { src: "/images/03-library/07-floorplan-1.png", caption: "Floor Plan 01", fullBleed: false },
-          { src: "/images/03-library/08-floorplan-2.png", caption: "Floor Plan 02", fullBleed: false },
+          { src: "/images/03-library/07-floorplan-1.png", caption: "Street Level Plan", fullBleed: false },
+          { src: "/images/03-library/08-floorplan-2.png", caption: "Mezzanine Level Plan", fullBleed: false },
         ],
       },
       {
         type: "renderings",
         title: "Renderings",
         images: [
-          { src: "/images/03-library/09-render-1.png", fullBleed: true },
-          { src: "/images/03-library/10-render-2.png", fullBleed: true },
-          { src: "/images/03-library/11-render-3.png", fullBleed: true },
-          { src: "/images/03-library/12-render-4.png", fullBleed: true },
-          { src: "/images/03-library/13-render-5.png", fullBleed: true },
-          { src: "/images/03-library/14-render-6.png", fullBleed: true },
+          { src: "/images/03-library/12-render-1.png", description: "Production with Vertical Farm and Information Station", fullBleed: false },
+          { src: "/images/03-library/13-render-2.png", description: "Use of Production Area", fullBleed: false },
+          { src: "/images/03-library/14-render-3.png", description: "Consumption Area with Cooking and Dining", fullBleed: false },
+          { src: "/images/03-library/15-render-4.png", description: "Communal Dining", fullBleed: false },
+          { src: "/images/03-library/16-render-5.png", description: "Research Area with Gardening Classroom", fullBleed: false },
+          { src: "/images/03-library/17-render-6.png", description: "Conventional Reading Area", fullBleed: false },
         ],
       },
     ],
@@ -244,7 +246,7 @@ export const projects: Project[] = [
           "The plan organizes the café around a central counter, with seating zones that respond to the existing structural rhythm of the building.",
         images: [
           { src: "/images/04-atlantic-cafe/02-floorplan.jpg", caption: "Floor Plan", fullBleed: false },
-          { src: "/images/04-atlantic-cafe/03-interior-section.jpg", caption: "Interior Section", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/03-interior-elevation.jpg", caption: "Interior Section", fullBleed: false },
         ],
       },
       {
@@ -253,12 +255,11 @@ export const projects: Project[] = [
         description:
           "A detailed construction documentation set developed in Revit—translating design intent into the language of the construction field.",
         images: [
-          { src: "/images/04-atlantic-cafe/04-shop-drawing-1.jpg", caption: "Shop Drawing 01", fullBleed: false },
-          { src: "/images/04-atlantic-cafe/05-shop-drawing-2.jpg", caption: "Shop Drawing 02", fullBleed: false },
-          { src: "/images/04-atlantic-cafe/06-shop-drawing-3.jpg", caption: "Shop Drawing 03", fullBleed: false },
-          { src: "/images/04-atlantic-cafe/07-shop-drawing-4.jpg", caption: "Shop Drawing 04", fullBleed: false },
-          { src: "/images/04-atlantic-cafe/08-shop-drawing-5.jpg", caption: "Shop Drawing 05", fullBleed: false },
-          { src: "/images/04-atlantic-cafe/09-shop-drawing-6.jpg", caption: "Shop Drawing 06", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/04-shop-drawings-1.jpg", caption: "Bartable Plan", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/09-shop-drawings-6.jpg", caption: "Back Bartable Transverse", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/05-shop-drawings-2.jpg", caption: "Bartable Elevation", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/06-shop-drawings-3.jpg", caption: "Bartable Section", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/08-shop-drawings-5.jpg", caption: "Front Bartable Longitudinal", fullBleed: false },
         ],
       },
       {
@@ -267,17 +268,18 @@ export const projects: Project[] = [
         description:
           "Floor-to-ceiling details and millwork specifications that resolve the relationship between the existing building envelope and new interior elements.",
         images: [
-          { src: "/images/04-atlantic-cafe/10-details-1.jpg", caption: "Detail 01", fullBleed: false },
-          { src: "/images/04-atlantic-cafe/11-details-2.jpg", caption: "Detail 02", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/07-shop-drawings-4.jpg", caption: "Floor to Ceiling Detail", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/10-details-1.jpg", caption: "Front Bartable Detail", fullBleed: false },
+          { src: "/images/04-atlantic-cafe/11-details-2.jpg", caption: "Back Bartable Detail", fullBleed: false },
         ],
       },
     ],
-    nextSlug: "kitchen",
+    nextSlug: "252-7th-ave",
   },
   {
-    slug: "kitchen",
+    slug: "252-7th-ave",
     number: "05",
-    title: "Kitchen",
+    title: "252 7th Ave",
     category: "Residential (Internship)",
     location: "252 7th Ave, New York, NY",
     year: "2026",
@@ -287,8 +289,9 @@ export const projects: Project[] = [
       "A condominium kitchen design exploring circulation, storage maximization, and material expression as part of a full-unit interior project.",
     fullDescription:
       "The project to design a kitchen for a condominium in Manhattan is part of a full-unit-sized interior design project at Studio Jari. Through site visits and meetings with the client, several options are explored that best fit the client's living style. It offers not only a convenient design—such as circulation and maximized storage—but also beauty. As an interior designer, the kitchen has been designated as an individual's task for design development. The process is currently in the construction drawing phase and will be developed further.",
-    heroImage: "/images/05-kitchen/01-hero.jpg",
-    thumbnailImage: "/images/05-kitchen/01-hero.jpg",
+    heroImage: "/images/05-252-7th-ave/01-hero.jpg",
+    heroDescription: "Kitchen View",
+    thumbnailImage: "/images/05-252-7th-ave/01-hero.jpg",
     sections: [
       {
         type: "concept",
@@ -296,8 +299,8 @@ export const projects: Project[] = [
         description:
           "Material and atmosphere studies that align the kitchen design with the client's living style and the unit's broader interior language.",
         images: [
-          { src: "/images/05-kitchen/06-concept-collage-1.png", fullBleed: false },
-          { src: "/images/05-kitchen/07-concept-collage-2.png", fullBleed: false },
+          { src: "/images/05-252-7th-ave/06-concept-collage-1.png", fullBleed: false },
+          { src: "/images/05-252-7th-ave/07-concept-collage-2.png", fullBleed: false },
         ],
       },
       {
@@ -306,8 +309,8 @@ export const projects: Project[] = [
         description:
           "The plan optimizes circulation and storage within the constraints of a Manhattan condominium, balancing functional efficiency with visual warmth.",
         images: [
-          { src: "/images/05-kitchen/02-floorplan.jpg", caption: "Kitchen Floor Plan", fullBleed: false },
-          { src: "/images/05-kitchen/03-material-board.png", caption: "Material Board", fullBleed: false },
+          { src: "/images/05-252-7th-ave/02-floorplan.jpg", caption: "Kitchen Floor Plan", fullBleed: false },
+          { src: "/images/05-252-7th-ave/03-material-board.png", caption: "Kitchen Material Board", fullBleed: false },
         ],
       },
       {
@@ -316,8 +319,16 @@ export const projects: Project[] = [
         description:
           "Self-developed millwork details that translate the kitchen design into buildable specifications.",
         images: [
-          { src: "/images/05-kitchen/04-details-1.jpg", caption: "Detail 01", fullBleed: false },
-          { src: "/images/05-kitchen/05-details-2.jpg", caption: "Detail 02", fullBleed: false },
+          { src: "/images/05-252-7th-ave/04-details-1.jpg", caption: "Kitchen Plan", fullBleed: false },
+          { src: "/images/05-252-7th-ave/05-details-2.jpg", caption: "Kitchen Interior Elevation", fullBleed: false },
+        ],
+      },
+      {
+        type: "plans",
+        title: "Powder Room",
+        images: [
+          { src: "/images/05-252-7th-ave/08-powder-room.png", caption: "Powder Room", fullBleed: true },
+          { src: "/images/05-252-7th-ave/09-material-board.png", caption: "Powder Room Material Board", fullBleed: false },
         ],
       },
     ],
