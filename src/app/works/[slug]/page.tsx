@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProject, getNextProject, projects } from "@/data/projects";
 import ScrollReveal from "@/components/ScrollReveal";
 import ProjectGallery from "@/components/ProjectGallery";
+import CollapsibleSection from "@/components/CollapsibleSection";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -80,11 +82,15 @@ export default async function ProjectPage({ params }: Props) {
       {project.heroImage && (
         <ScrollReveal delay={200}>
           <div className="my-24 md:my-32">
-            <img
+            <Image
               src={project.heroImage}
               alt={project.title}
-              className="w-full h-auto"
-              loading="lazy"
+              width={1920}
+              height={1440}
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1440px"
+              quality={75}
+              style={{ width: '100%', height: 'auto' }}
             />
             {project.heroDescription && (
               <div className="mt-4 max-w-3xl">
@@ -111,24 +117,36 @@ export default async function ProjectPage({ params }: Props) {
       ) : (
         project.sections.map((section, i) => (
           <ScrollReveal key={i}>
-            <section className="mb-32 md:mb-48">
-              <div className="max-w-4xl mb-12 md:mb-16">
-                <p className="font-mono text-xs uppercase tracking-widest text-muted">
-                  {section.type}
-                </p>
-                <h2 className="mt-3 text-3xl md:text-4xl font-medium tracking-tight">
-                  {section.title}
-                </h2>
-                {section.description && (
-                  <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed">
-                    {section.description}
+            {section.collapsible ? (
+              <div className="mb-32 md:mb-48">
+                <CollapsibleSection
+                  title={section.title}
+                  description={section.description}
+                  defaultOpen={false}
+                >
+                  <ProjectGallery section={section} />
+                </CollapsibleSection>
+              </div>
+            ) : (
+              <section className="mb-32 md:mb-48">
+                <div className="max-w-4xl mb-12 md:mb-16">
+                  <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                    {section.type}
                   </p>
-                )}
-              </div>
-              <div className="mt-12">
-                <ProjectGallery section={section} />
-              </div>
-            </section>
+                  <h2 className="mt-3 text-3xl md:text-4xl font-medium tracking-tight">
+                    {section.title}
+                  </h2>
+                  {section.description && (
+                    <p className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed">
+                      {section.description}
+                    </p>
+                  )}
+                </div>
+                <div className="mt-12">
+                  <ProjectGallery section={section} />
+                </div>
+              </section>
+            )}
           </ScrollReveal>
         ))
       )}

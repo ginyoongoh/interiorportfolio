@@ -2,6 +2,8 @@ export type ProjectSection = {
   type: "concept" | "site" | "strategy" | "plans" | "renderings" | "details" | "process";
   title: string;
   description?: string;
+  collapsible?: boolean;
+  columnsCount?: 1 | 2 | 3;
   images: {
     src: string;
     caption?: string;
@@ -118,17 +120,21 @@ export const projects: Project[] = [
       {
         type: "process",
         title: "Design Process",
+        collapsible: true,
+        columnsCount: 2,
         description:
           "Iterative explorations and study models that shaped the project from initial site response to final spatial resolution.",
         images: [
-          { src: "/images/01-artist-residency/18-process-1.png", fullBleed: false },
-          { src: "/images/01-artist-residency/19-process-2.png", fullBleed: false },
+          { src: "/images/01-artist-residency/18-process-1.png", description: "Site Research", fullBleed: false },
+          { src: "/images/01-artist-residency/19-process-2.png", description: "Program Matrix", fullBleed: false },
           { src: "/images/01-artist-residency/20-process-3.png", fullBleed: false },
           { src: "/images/01-artist-residency/21-process-4.png", fullBleed: false },
           { src: "/images/01-artist-residency/22-process-5.png", fullBleed: false },
           { src: "/images/01-artist-residency/23-process-6.png", fullBleed: false },
           { src: "/images/01-artist-residency/24-process-7.png", fullBleed: false },
           { src: "/images/01-artist-residency/25-process-8.png", fullBleed: false },
+          { src: "/images/01-artist-residency/26-process-9.png", fullBleed: false },
+          { src: "/images/01-artist-residency/27-process-10.png", fullBleed: false },
         ],
       },
     ],
@@ -140,16 +146,111 @@ export const projects: Project[] = [
     title: "Modern Hanok",
     category: "Residential",
     location: "Mapo-gu, Seoul, South Korea",
-    year: "2026",
-    status: "In Progress — Conceptual",
+    year: "2026 (Academic)",
+    status: "Conceptual",
     projectType: "Residential",
     shortDescription:
-      "A reinterpretation of Hanok principles for contemporary public housing in Seoul, restoring intimacy and collective identity through layered spatial scales.",
+      "A reinterpretation of Hanok spatial principles—layered intimacy and borrowed nature—applied to contemporary high-density housing in Seoul's Mapo District.",
     fullDescription:
-      "The project reinterprets Hanok principles—layered intimacy and borrowed nature—as a framework for contemporary public housing in Seoul's Mapo District. Korea's standardized apartment typology has severed the relationship between residents and their community and natural environment. By translating the spatial logic of vernacular architecture into three scales of intervention—unit, floor, and building—the design creates layered communal interaction. Each scale reflects the core values of Hanok: borrowing nature inward and cultivating spaces of gradual intimacy. It offers a new housing typology that restores intimacy, collective identity, and environmental awareness within high-density urban living.",
-    heroImage: "",
-    thumbnailImage: "",
-    sections: [],
+      "The project reinterprets Hanok principles—layered intimacy and borrowed nature—as a framework for contemporary public housing in Seoul's Mapo District. Korea's standardized apartment typology has severed the relationship between residents and their community and natural environment. By translating the spatial logic of vernacular architecture into three scales of intervention—unit, floor, and building—the design creates layered communal interaction. Each scale reflects the core values of Hanok, the traditional Korean home: borrowing nature inward and cultivating spaces of gradual intimacy. It offers a new housing typology that restores intimacy, collective identity, and environmental awareness within high-density urban living.",
+    heroImage: "/images/02-modern-hanok/01-hero.png",
+    thumbnailImage: "/images/02-modern-hanok/01-hero.png",
+    heroDescription: "Floor Scale Intervention",
+    sections: [
+      {
+        type: "process",
+        title: "Process",
+        collapsible: true,
+        columnsCount: 2,
+        description:
+          "Research and exploration of vernacular Korean architecture, including studies on Madang and Daecheong as buffers between public/private and outdoor/indoor, and material studies on Hanji as a sustainable traditional material.",
+        images: [
+          { src: "/images/02-modern-hanok/02-process-1.png", fullBleed: false },
+          { src: "/images/02-modern-hanok/03-process-2.png", fullBleed: false },
+          { src: "/images/02-modern-hanok/04-process-3.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/05-process-4.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/06-process-5.png", fullBleed: false },
+          { src: "/images/02-modern-hanok/07-process-6.jpg", fullBleed: false },
+        ],
+      },
+      {
+        type: "strategy",
+        title: "Design Strategy Diagram",
+        description:
+          "Strategic frameworks visualizing how Hanok principles are translated into a contemporary residential typology, addressing both spatial organization and environmental performance.",
+        images: [
+          { src: "/images/02-modern-hanok/08-strategy-1.jpg", description: "Design Strategy 1", fullBleed: false },
+          { src: "/images/02-modern-hanok/09-strategy-2.jpg", description: "Design Strategy 2", fullBleed: false },
+        ],
+      },
+      {
+        type: "concept",
+        title: "Program",
+        description:
+          "Programmatic distribution across five tiers of communal scale—from intimate spaces between units to public-facing areas connecting residents and the broader community.",
+        images: [
+          { src: "/images/02-modern-hanok/10-program-1.jpg", description: "Proposed Program", fullBleed: false },
+          { src: "/images/02-modern-hanok/11-program-2.png", description: "Design Approach", fullBleed: false },
+        ],
+      },
+      {
+        type: "plans",
+        title: "Living",
+        columnsCount: 1,
+        description:
+          "Unit and floor scale interventions creating double-height living spaces with cross-ventilation and in-between flexibility, reinterpreting the Hanok principle of borrowed nature within the dwelling unit.",
+        images: [
+          { src: "/images/02-modern-hanok/12-living-1.png", description: "Unit Axon 1", fullBleed: false },
+          { src: "/images/02-modern-hanok/13-living-2.png", description: "Unit Axon 2", fullBleed: false },
+          { src: "/images/02-modern-hanok/14-living-3.png", description: "Floor Axon", fullBleed: false },
+          { src: "/images/02-modern-hanok/15-living-4.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/16-living-5.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/17-living-6.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/18-unit-1.png", description: "Unit Material Board", fullBleed: false },
+          { src: "/images/02-modern-hanok/19-unit-2.jpg", description: "Unit Render 1", fullBleed: false },
+          { src: "/images/02-modern-hanok/20-unit-3.jpg", description: "Unit Render 2", fullBleed: false },
+        ],
+      },
+      {
+        type: "renderings",
+        title: "Communal",
+        columnsCount: 1,
+        description:
+          "Building-scale interventions creating Urban Daecheong—a contemporary reinterpretation of the traditional Korean transition space—that hosts diverse communal activities while maintaining visual and spatial connections to nature.",
+        images: [
+          { src: "/images/02-modern-hanok/21-communal-1.png", description: "Ground Floorplan", fullBleed: false },
+          { src: "/images/02-modern-hanok/22-communal-2.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/23-communal-3.png", description: "Material Board", fullBleed: false },
+          { src: "/images/02-modern-hanok/24-communal-4.jpg", description: "Modern Daecheong", fullBleed: false },
+          { src: "/images/02-modern-hanok/25-communal-5.jpg", description: "Lobby", fullBleed: false },
+          { src: "/images/02-modern-hanok/26-communal-6.jpg", description: "Office", fullBleed: false },
+          { src: "/images/02-modern-hanok/27-communal-7.jpg", description: "Community Activity & Pop up Events", fullBleed: false },
+        ],
+      },
+      {
+        type: "plans",
+        title: "Overview",
+        description:
+          "Overall building organization showing the integration of unit, floor, and building scale interventions into a cohesive residential typology.",
+        images: [
+          { src: "/images/02-modern-hanok/28-section-perspective.png", caption: "Section Perspective", fullBleed: true },
+          { src: "/images/02-modern-hanok/29-exploded-axon.png", caption: "Exploded Axonometric", fullBleed: true },
+        ],
+      },
+      {
+        type: "process",
+        title: "Precedent Model",
+        collapsible: true,
+        columnsCount: 1,
+        description:
+          "Physical models exploring spatial relationships, material qualities, and the translation of vernacular principles into contemporary form.",
+        images: [
+          { src: "/images/02-modern-hanok/30-precedent-model-1.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/31-precedent-model-2.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/32-precedent-model-3.jpg", fullBleed: false },
+        ],
+      },
+    ],
     nextSlug: "library",
   },
   {
@@ -201,6 +302,7 @@ export const projects: Project[] = [
       {
         type: "renderings",
         title: "Renderings",
+        columnsCount: 1,
         images: [
           { src: "/images/03-library/12-render-1.png", description: "Production with Vertical Farm and Information Station", fullBleed: false },
           { src: "/images/03-library/13-render-2.png", description: "Use of Production Area", fullBleed: false },
