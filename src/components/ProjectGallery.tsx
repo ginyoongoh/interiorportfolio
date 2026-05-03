@@ -21,6 +21,7 @@ function getGridCols(section: ProjectSection): string {
   if (section.columnsCount === 3) return 'grid-cols-1 md:grid-cols-3';
   if (section.type === 'process') return 'grid-cols-1 md:grid-cols-3';
   const allFlat = section.images.every(img => !img.fullBleed);
+  if (allFlat && section.images.length === 2) return 'grid-cols-1 md:grid-cols-2';
   if (allFlat && section.images.length === 3) return 'grid-cols-1 md:grid-cols-3';
   return 'grid-cols-1 md:grid-cols-2';
 }
