@@ -174,13 +174,25 @@ export const projects: Project[] = [
         ],
       },
       {
+        type: "site",
+        title: "Site",
+        columnsCount: 1,
+        images: [
+          {
+            src: "/images/02-modern-hanok/08-site-diagram.png",
+            description: "More details on process",
+            fullBleed: false,
+          },
+        ],
+      },
+      {
         type: "strategy",
         title: "Design Strategy Diagram",
         description:
           "Strategic frameworks visualizing how Hanok principles are translated into a contemporary residential typology, addressing both spatial organization and environmental performance.",
         images: [
-          { src: "/images/02-modern-hanok/08-strategy-1.jpg", description: "Design Strategy 1", fullBleed: false },
-          { src: "/images/02-modern-hanok/09-strategy-2.jpg", description: "Design Strategy 2", fullBleed: false },
+          { src: "/images/02-modern-hanok/09-strategy-1.jpg", description: "Design Strategy 1", fullBleed: false },
+          { src: "/images/02-modern-hanok/10-strategy-2.jpg", description: "Design Strategy 2", fullBleed: false },
         ],
       },
       {
@@ -189,8 +201,8 @@ export const projects: Project[] = [
         description:
           "Programmatic distribution across five tiers of communal scale—from intimate spaces between units to public-facing areas connecting residents and the broader community.",
         images: [
-          { src: "/images/02-modern-hanok/10-program-1.jpg", description: "Proposed Program", fullBleed: false },
-          { src: "/images/02-modern-hanok/11-program-2.png", description: "Design Approach", fullBleed: false },
+          { src: "/images/02-modern-hanok/11-program-1.jpg", description: "Proposed Program", fullBleed: false },
+          { src: "/images/02-modern-hanok/12-program-2.png", description: "Design Approach", fullBleed: false },
         ],
       },
       {
@@ -200,15 +212,15 @@ export const projects: Project[] = [
         description:
           "Unit and floor scale interventions creating double-height living spaces with cross-ventilation and in-between flexibility, reinterpreting the Hanok principle of borrowed nature within the dwelling unit.",
         images: [
-          { src: "/images/02-modern-hanok/12-living-1.png", description: "Unit Axon 1", fullBleed: false },
-          { src: "/images/02-modern-hanok/13-living-2.png", description: "Unit Axon 2", fullBleed: false },
-          { src: "/images/02-modern-hanok/14-living-3.png", description: "Floor Axon", fullBleed: false },
-          { src: "/images/02-modern-hanok/15-living-4.jpg", fullBleed: false },
-          { src: "/images/02-modern-hanok/16-living-5.jpg", fullBleed: false },
-          { src: "/images/02-modern-hanok/17-living-6.jpg", fullBleed: false },
-          { src: "/images/02-modern-hanok/18-unit-1.png", description: "Unit Material Board", fullBleed: false },
-          { src: "/images/02-modern-hanok/19-unit-2.jpg", description: "Unit Render 1", fullBleed: false },
-          { src: "/images/02-modern-hanok/20-unit-3.jpg", description: "Unit Render 2", fullBleed: false },
+          { src: "/images/02-modern-hanok/13-living-1.png", description: "Unit Axon 1", fullBleed: false },
+          { src: "/images/02-modern-hanok/14-living-2.png", description: "Unit Axon 2", fullBleed: false },
+          { src: "/images/02-modern-hanok/15-living-3.png", description: "Floor Axon", fullBleed: false },
+          { src: "/images/02-modern-hanok/16-living-4.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/17-living-5.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/18-living-6.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/19-unit-1.png", description: "Unit Material Board", fullBleed: false },
+          { src: "/images/02-modern-hanok/20-unit-2.jpg", description: "Unit Render 1", fullBleed: false },
+          { src: "/images/02-modern-hanok/21-unit-3.jpg", description: "Unit Render 2", fullBleed: false },
         ],
       },
       {
@@ -218,13 +230,13 @@ export const projects: Project[] = [
         description:
           "Building-scale interventions creating Urban Daecheong—a contemporary reinterpretation of the traditional Korean transition space—that hosts diverse communal activities while maintaining visual and spatial connections to nature.",
         images: [
-          { src: "/images/02-modern-hanok/21-communal-1.png", description: "Ground Floorplan", fullBleed: false },
-          { src: "/images/02-modern-hanok/22-communal-2.jpg", fullBleed: false },
-          { src: "/images/02-modern-hanok/23-communal-3.png", description: "Material Board", fullBleed: false },
-          { src: "/images/02-modern-hanok/24-communal-4.jpg", description: "Modern Daecheong", fullBleed: false },
-          { src: "/images/02-modern-hanok/25-communal-5.jpg", description: "Lobby", fullBleed: false },
-          { src: "/images/02-modern-hanok/26-communal-6.jpg", description: "Office", fullBleed: false },
-          { src: "/images/02-modern-hanok/27-communal-7.jpg", description: "Community Activity & Pop up Events", fullBleed: false },
+          { src: "/images/02-modern-hanok/22-communal-1.png", description: "Ground Floorplan", fullBleed: false },
+          { src: "/images/02-modern-hanok/23-communal-2.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/24-communal-3.png", description: "Material Board", fullBleed: false },
+          { src: "/images/02-modern-hanok/25-communal-4.jpg", description: "Modern Daecheong", fullBleed: false },
+          { src: "/images/02-modern-hanok/26-communal-5.jpg", description: "Lobby", fullBleed: false },
+          { src: "/images/02-modern-hanok/27-communal-6.jpg", description: "Office", fullBleed: false },
+          { src: "/images/02-modern-hanok/28-communal-7.jpg", description: "Community Activity & Pop up Events", fullBleed: false },
         ],
       },
       {
@@ -233,8 +245,8 @@ export const projects: Project[] = [
         description:
           "Overall building organization showing the integration of unit, floor, and building scale interventions into a cohesive residential typology.",
         images: [
-          { src: "/images/02-modern-hanok/28-section-perspective.png", caption: "Section Perspective", fullBleed: true },
-          { src: "/images/02-modern-hanok/29-exploded-axon.png", caption: "Exploded Axonometric", fullBleed: true },
+          { src: "/images/02-modern-hanok/29-section-perspective.png", caption: "Section Perspective", fullBleed: true },
+          { src: "/images/02-modern-hanok/30-exploded-axon.png", caption: "Exploded Axonometric", fullBleed: true },
         ],
       },
       {
@@ -245,9 +257,9 @@ export const projects: Project[] = [
         description:
           "Physical models exploring spatial relationships, material qualities, and the translation of vernacular principles into contemporary form.",
         images: [
-          { src: "/images/02-modern-hanok/30-precedent-model-1.jpg", fullBleed: false },
-          { src: "/images/02-modern-hanok/31-precedent-model-2.jpg", fullBleed: false },
-          { src: "/images/02-modern-hanok/32-precedent-model-3.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/31-precedent-model-1.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/32-precedent-model-2.jpg", fullBleed: false },
+          { src: "/images/02-modern-hanok/33-precedent-model-3.jpg", fullBleed: false },
         ],
       },
     ],
