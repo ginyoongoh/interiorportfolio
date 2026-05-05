@@ -51,8 +51,62 @@ function ImageMeta({ caption, description }: { caption?: string; description?: s
 }
 
 export default function ProjectGallery({ section }: { section: ProjectSection }) {
-  const groups = groupImages(section.images);
   const isDrawing = section.type === 'plans' || section.type === 'details';
+
+  if (section.gridGroups && section.images.some(img => img.gridGroup)) {
+    const orderedGroups: Array<{ groupId: string; images: ProjectSection['images'] }> = [];
+    let currentGroupId: string | null = null;
+    let currentImages: ProjectSection['images'] = [];
+
+    for (const img of section.images) {
+      const gid = img.gridGroup ?? 'default';
+      if (gid !== currentGroupId) {
+        if (currentImages.length > 0 && currentGroupId !== null) {
+          orderedGroups.push({ groupId: currentGroupId, images: currentImages });
+        }
+        currentGroupId = gid;
+        currentImages = [img];
+      } else {
+        currentImages.push(img);
+      }
+    }
+    if (currentImages.length > 0 && currentGroupId !== null) {
+      orderedGroups.push({ groupId: currentGroupId, images: currentImages });
+    }
+
+    return (
+      <div className="space-y-8">
+        {orderedGroups.map(({ groupId, images }, idx) => {
+          const cols = section.gridGroups![groupId] ?? 1;
+          const gridCols =
+            cols === 1 ? 'grid-cols-1' :
+            cols === 2 ? 'grid-cols-1 md:grid-cols-2' :
+            'grid-cols-1 md:grid-cols-3';
+          const sizes = getSizes(gridCols);
+          return (
+            <div key={idx} className={`grid ${gridCols} gap-x-8 gap-y-12`}>
+              {images.map((img, ii) => (
+                <div key={ii} className={isDrawing ? 'bg-white' : ''}>
+                  <Image
+                    src={img.src}
+                    alt={img.caption ?? img.description ?? section.title}
+                    width={1920}
+                    height={1440}
+                    sizes={sizes}
+                    quality={75}
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                  <ImageMeta caption={img.caption} description={img.description} />
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  const groups = groupImages(section.images);
   const gridCols = getGridCols(section);
   const colSizes = getSizes(gridCols);
 
