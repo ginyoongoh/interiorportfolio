@@ -202,6 +202,7 @@ export const projects: Project[] = [
         title: "Design Approach",
         description:
           "Programmatic distribution across five tiers of communal scale—from intimate spaces between units to public-facing areas connecting residents and the broader community.",
+        columnsCount: 1,
         images: [
           { src: "/images/02-modern-hanok/11-program-1.jpg", description: "Proposed Program", fullBleed: false },
           { src: "/images/02-modern-hanok/12-program-2.png", fullBleed: false },
